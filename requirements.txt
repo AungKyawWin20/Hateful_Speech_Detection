@@ -1,8 +1,4 @@
 flask
 scikit-learn
 pandas
-numpy
-matplotlib
 joblib
-nltk
-re
