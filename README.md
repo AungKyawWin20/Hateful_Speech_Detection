@@ -1,6 +1,7 @@
 # Hateful_Speech_Detection
 Developing a Flask-based web application for detecting hateful speech using a dataset from Kaggle
-Link : https://www.kaggle.com/datasets/waalbannyantudre/hate-speech-detection-curated-dataset?select=HateSpeechDatasetBalanced.csv
+
+Link: https://www.kaggle.com/datasets/waalbannyantudre/hate-speech-detection-curated-dataset?select=HateSpeechDatasetBalanced.csv
 
 
 A lightweight and accurate hate speech classifier powered by a TF-IDF vectorizer and Multinomial Naive Bayes. The app provides a web interface and a REST API for real-time predictions.
