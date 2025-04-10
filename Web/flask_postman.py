@@ -2,21 +2,21 @@ from flask import Flask, request, jsonify
 import joblib
 
 app = Flask(__name__)
-model = joblib.load('../models/hate_speech_model.pkl')
-vectorizer = joblib.load('../models/tfidf_vectorizer.pkl')
+pipeline = joblib.load('../models/hate_speech_pipeline.joblib') 
+
 @app.route('/predict', methods=['POST'])
-
 def predict():
-    data = request.get_json()
-    content = data.get('text', '')
+    data = request.get_json(force=True)
+    texts = data['text']
+    predictions = pipeline.predict(texts)
+    labels = []
+    for p in predictions:
+        if p == 0:
+            labels.append("Not Hate Speech")
+        else:
+            labels.append("Hate Speech")
     
-    # Vectorize the input text (transform it into numerical features)
-    content_vectorized = vectorizer.transform([content])  # This creates a 2D array
-
-    # Make the prediction
-    prediction = model.predict(content_vectorized)[0]
-    
-    return jsonify({"prediction": int(prediction)})
+    return jsonify({"prediction": labels})
 
 if __name__ == '__main__':
     app.run(debug=True)
