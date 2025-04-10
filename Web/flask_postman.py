@@ -24,8 +24,8 @@ if __name__ == '__main__':
 """
 
 To run the Flask app, use the command: python flask_postman.py
-Make sure to install Flask and joblib if you haven't already
+Make sure to install Flask and joblib if you haven't already.
 pip install Flask joblib
-You can test the API using Postmman or any other API testing tool
+You can test the API using Postman or any other API testing tool
 
 """
