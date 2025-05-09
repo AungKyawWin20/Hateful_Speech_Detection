@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
+from flask_frozen import Freezer
 import joblib
 
 app = Flask(__name__)
+freezer = Freezer(app)
 pipeline = joblib.load('../models/hate_speech_pipeline.joblib')
 
 @app.route('/')
