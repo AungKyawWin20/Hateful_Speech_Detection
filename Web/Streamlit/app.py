@@ -42,7 +42,7 @@ st.markdown("""
 
 # Load the model
 
-pipeline = joblib.load('../../models/hate_speech_pipeline.joblib')
+pipeline = joblib.load('././models/hate_speech_pipeline.joblib')
 
 # App title and description
 st.title("🛡️ Hateful Speech Detection")
